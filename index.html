@@ -3,50 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro-Bel 2001</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AGRO-BEL 2001</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 20px;
+        }
+        .logo {
+            text-align: center;
+        }
+        .logo img {
+            width: 100%;
+            max-width: 300px; /* Adjust as needed */
+        }
+        .social-links {
+            text-align: right;
+            margin-right: 20px;
+        }
+        .social-links img {
+            width: 30px;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Background Image -->
-    <div class="background-image"></div>
 
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="#"><img src="images/bulgarian-flag.png" alt="Bulgarian Language" class="flag"></a>
-        <a href="#"><img src="images/english-flag.png" alt="English Language" class="flag"></a>
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+        <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+        <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
     </div>
 
-    <!-- Social Media Links (placeholders for now) -->
-    <div class="social-media">
-        <!-- Placeholder links for social media icons -->
-        <!-- Add actual icons or links here later -->
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- First Logo -->
+        <div class="logo">
+            <img src="images/agrobel2001.png" alt="AGROBEL 2001">
+        </div>
+
+        <!-- Second Logo -->
+        <div class="logo">
+            <img src="images/belbultrans.png" alt="BELBULTRANS">
+        </div>
+
+        <!-- Third Logo -->
+        <div class="logo">
+            <img src="images/agrobellhellas.png" alt="AGROBEL HELLAS">
+        </div>
+
+        <!-- Fourth Logo -->
+        <div class="logo">
+            <img src="images/agromel2011.png" alt="AGRO MEL 2011">
+        </div>
+
+        <!-- Fifth Logo -->
+        <div class="logo">
+            <img src="images/corporate-social-responsibility.png" alt="Corporate Social Responsibility">
+        </div>
+
+        <!-- Sixth Logo -->
+        <div class="logo">
+            <img src="images/agrimachin.png" alt="AGRIMACHIN">
+        </div>
+
     </div>
 
-    <!-- Main Logo and Entity Logos -->
-    <div class="logo-container">
-        <div class="logo-row">
-            <img src="images/agrobel-vegetables.png" alt="Agro-Bel 2001 Vegetables" class="logo">
-            <img src="images/belbultrans.png" alt="Belbultrans" class="logo">
-        </div>
-
-        <div class="center-logo">
-            <img src="images/agrobel-2001.png" alt="AGROBEL 2001">
-        </div>
-
-        <div class="logo-row">
-            <img src="images/agromel.png" alt="AGRO-MEL" class="logo">
-            <img src="images/csr.png" alt="Corporate Social Responsibility" class="logo">
-        </div>
-
-        <div class="side-logos">
-            <img src="images/agrimachin.png" alt="AGRIMACHIN" class="side-logo">
-            <img src="images/agrobel-hellas.png" alt="AGROBEL Hellas" class="side-logo">
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 AGRO-BEL 2001 EOOD All rights reserved.</p>
-    </footer>
 </body>
 </html>
