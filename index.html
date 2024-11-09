@@ -4,89 +4,72 @@
     <meta charset="UTF-8">
     <title>My Website</title>
     <style>
-        /* Existing styles (from your previous code) */
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('images/agrb.png'); /* Initial background image */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            overflow: hidden; /* Prevent scrollbars during animation */
-        }
-        .rectangle {
-            opacity: 0; /* Hide main content initially */
-            transition: opacity 1s; /* Smooth fade-in effect */
-        }
-        /* ... (Include all your existing styles for .logo-container, .logo, .bottom-right, etc.) */
-
-        /* Animation keyframes for background zoom */
-        @keyframes backgroundZoom {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.5);
-            }
-        }
-        /* Apply the animation to the body when the zoom class is added */
-        .zoom-animation {
-            animation: backgroundZoom 2s forwards;
-        }
-        /* Show the main content when the show-content class is added */
-        .show-content {
-            opacity: 1;
-        }
+        /* Existing styles... (keep your existing CSS here) */
+    </style>
+    <!-- Include the new styles and animations -->
+    <style>
+        /* Styles for the overlay and animations (if any) */
     </style>
 </head>
-<body id="body">
-    <!-- Main Content -->
-    <div class="rectangle" id="mainContent">
+<body>
+    <!-- Existing content -->
+    <div class="rectangle">
         <!-- Quadrant 1 -->
         <div class="logo-container">
-            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+            <img id="logo1" src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo hidden">
         </div>
         <!-- Quadrant 2 -->
         <div class="logo-container">
-            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+            <img id="logo2" src="images/belbultrans.png" alt="Belbultrans Logo" class="logo hidden">
         </div>
         <!-- Quadrant 3 -->
         <div class="logo-container">
-            <img src="images/agromel.png" alt="Agromel Logo" class="logo">
+            <img id="logo3" src="images/agromel.png" alt="Agromel Logo" class="logo hidden">
         </div>
         <!-- Quadrant 4 with subquadrants -->
         <div class="logo-container bottom-right">
             <!-- Subquadrant 1 -->
             <div class="subquadrant">
-                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo">
+                <img id="logo4" src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo hidden">
             </div>
             <!-- Subquadrant 2 -->
             <div class="subquadrant">
-                <img src="images/csr.png" alt="CSR Logo" class="sub-logo">
+                <img id="logo5" src="images/csr.png" alt="CSR Logo" class="sub-logo hidden">
             </div>
             <!-- Subquadrant 3 -->
             <div class="subquadrant">
-                <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo">
+                <img id="logo6" src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo hidden">
             </div>
         </div>
         <!-- Center overlaid logo -->
-        <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo">
+        <img id="logo7" src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo hidden">
     </div>
 
-    <!-- JavaScript to control the animation -->
+    <!-- JavaScript to control the logo appearance -->
     <script>
-        window.addEventListener('load', function() {
-            // Wait 2 seconds before starting the zoom effect
-            setTimeout(function() {
-                // Add the zoom-animation class to start the zoom effect
-                document.getElementById('body').classList.add('zoom-animation');
+        // Function to show logos one after another
+        function showLogosSequentially() {
+            const logos = [
+                document.getElementById('logo1'),
+                document.getElementById('logo2'),
+                document.getElementById('logo3'),
+                document.getElementById('logo4'),
+                document.getElementById('logo5'),
+                document.getElementById('logo6'),
+                document.getElementById('logo7')
+            ];
 
-                // After the zoom effect, show the main content
-                setTimeout(function() {
-                    document.getElementById('mainContent').classList.add('show-content');
-                }, 2000); // Duration of the zoom effect
-            }, 2000); // Initial delay before starting the zoom
+            logos.forEach((logo, index) => {
+                setTimeout(() => {
+                    logo.classList.remove('hidden');
+                }, index * 500); // Delay of 500ms between each logo
+            });
+        }
+
+        // Wait for the page to load
+        window.addEventListener('load', function() {
+            // Start showing logos one after another
+            showLogosSequentially();
         });
     </script>
 </body>
