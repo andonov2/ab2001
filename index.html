@@ -141,15 +141,15 @@
             max-width: 40%; /* Increased size */
             max-height: 40%; /* Increased size */
             z-index: 3; /* Ensure it's above other content */
-            pointer-events: none; /* Allow clicks to pass through if needed */
             transition: filter 0.3s; /* Smooth transition for hover effect */
+            /* Removed pointer-events: none; to enable hover effect */
         }
 
         /* Hover effect for all logos */
         .logo:hover,
         .sub-logo:hover,
         .center-logo:hover {
-            filter: blur(2px); /* Apply blur effect on hover */
+            filter: blur(4px); /* Increased blur effect on hover */
         }
     </style>
 </head>
