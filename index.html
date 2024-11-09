@@ -45,3 +45,35 @@
             top: 50%;
             left: 0;
             right: 0;
+            height: 2px; /* Horizontal line */
+        }
+
+        /* Ensure each logo container takes up its full quadrant */
+        .logo-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Ensure each logo fills its container while maintaining aspect ratio */
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Maintain aspect ratio without cropping */
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <!-- Top-left logo (Agrobel) -->
+        <div class="logo-container">
+            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+        </div>
+
+        <!-- Top-right logo (Belbultrans) -->
+        <div class="logo-container">
+            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+        </div>
+        
+    </div>
+</body>
+</html>
