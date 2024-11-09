@@ -54,26 +54,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Prevent images from overflowing */
+            overflow: hidden;
             width: 100%;
             height: 100%;
             box-sizing: border-box;
-            position: relative; /* Ensure proper stacking context */
+            position: relative;
+        }
+
+        /* Links inside logo containers */
+        .logo-container a {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         /* Logos in quadrants 1, 2, and 3 */
         .logo {
             height: 100%;
             width: auto;
-            object-fit: contain; /* Maintain aspect ratio without cropping */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for logos */
+        .logo-container a:hover .logo {
+            transform: scale(1.05);
+            cursor: pointer;
         }
 
         /* Bottom-right quadrant split into three horizontal sections */
         .bottom-right {
             display: grid;
-            grid-template-rows: repeat(3, 1fr); /* Three equal rows */
-            position: relative; /* Positioning context for pseudo-elements */
-            overflow: hidden; /* Ensure content doesn't overflow */
+            grid-template-rows: repeat(3, 1fr);
+            position: relative;
+            overflow: hidden;
         }
 
         /* Horizontal dividing lines for bottom-right quadrant only */
@@ -82,18 +96,18 @@
             content: '';
             position: absolute;
             background-color: black;
-            z-index: 2; /* Bring lines above images */
+            z-index: 2;
             left: 0;
             right: 0;
             height: 2px;
         }
 
         .bottom-right::before {
-            top: calc(33.33%); /* First dividing line at 1/3 height */
+            top: calc(33.33%);
         }
 
         .bottom-right::after {
-            top: calc(66.66%); /* Second dividing line at 2/3 height */
+            top: calc(66.66%);
         }
 
         /* Style for subquadrants in bottom-right quadrant */
@@ -102,44 +116,62 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
-            overflow: hidden; /* Prevent content from overflowing */
+            overflow: hidden;
             width: 100%;
             height: 100%;
-            position: relative; /* Ensure proper stacking context */
+            position: relative;
+        }
+
+        /* Links inside subquadrants */
+        .subquadrant a {
+            display: block;
+            width: 100%;
+            height: 100%;
         }
 
         /* Default styles for logos in subquadrants */
         .sub-logo {
             height: auto;
-            object-fit: contain; /* Maintain aspect ratio without cropping */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover effect for sub-logo */
+        .subquadrant a:hover .sub-logo {
+            transform: scale(1.05);
+            cursor: pointer;
         }
 
         /* Specific styling for widening logos in subquadrants */
-        /* First subquadrant (Agrobel-Hellas logo) */
-        .bottom-right .subquadrant:nth-child(1) .sub-logo {
-            width: 120%; /* Increase width by 20% */
-        }
-
-        /* Second subquadrant (CSR logo) */
-        .bottom-right .subquadrant:nth-child(2) .sub-logo {
-            width: 120%; /* Increase width by 20% */
-        }
-
-        /* Third subquadrant (Agrimachin logo) */
+        .bottom-right .subquadrant:nth-child(1) .sub-logo,
+        .bottom-right .subquadrant:nth-child(2) .sub-logo,
         .bottom-right .subquadrant:nth-child(3) .sub-logo {
-            width: 120%; /* Increase width by 20% */
+            width: 120%;
         }
 
         /* Style for the center overlaid logo */
-        .center-logo {
+        .center-logo-container {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Center the logo */
-            max-width: 40%; /* Increased size */
-            max-height: 40%; /* Increased size */
-            z-index: 3; /* Ensure it's above other content */
-            pointer-events: none; /* Allow clicks to pass through if needed */
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        .center-logo-container a {
+            display: block;
+        }
+
+        .center-logo {
+            max-width: 40%;
+            max-height: 40%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .center-logo-container a:hover .center-logo {
+            transform: scale(1.05);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -147,37 +179,53 @@
     <div class="rectangle">
         <!-- Top-left logo (Quadrant 1) -->
         <div class="logo-container">
-            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+            <a href="#">
+                <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+            </a>
         </div>
 
         <!-- Top-right logo (Quadrant 2) -->
         <div class="logo-container">
-            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+            <a href="#">
+                <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+            </a>
         </div>
 
         <!-- Bottom-left logo (Quadrant 3) -->
         <div class="logo-container">
-            <img src="images/agromel.png" alt="Agromel Logo" class="logo">
+            <a href="#">
+                <img src="images/agromel.png" alt="Agromel Logo" class="logo">
+            </a>
         </div>
 
         <!-- Bottom-right quadrant (Quadrant 4) split into three horizontal parts -->
         <div class="logo-container bottom-right">
             <!-- First subquadrant with Agrobel-Hellas logo -->
             <div class="subquadrant">
-                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo">
+                <a href="#">
+                    <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo">
+                </a>
             </div>
             <!-- Second subquadrant with CSR logo -->
             <div class="subquadrant">
-                <img src="images/csr.png" alt="CSR Logo" class="sub-logo">
+                <a href="#">
+                    <img src="images/csr.png" alt="CSR Logo" class="sub-logo">
+                </a>
             </div>
             <!-- Third subquadrant with Agrimachin logo -->
             <div class="subquadrant">
-                <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo">
+                <a href="#">
+                    <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo">
+                </a>
             </div>
         </div>
 
         <!-- Center overlaid logo (Agrobel Vegetables) -->
-        <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo">
+        <div class="center-logo-container">
+            <a href="#">
+                <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo">
+            </a>
+        </div>
     </div>
 </body>
 </html>
