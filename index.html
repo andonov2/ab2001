@@ -4,58 +4,45 @@
     <meta charset="UTF-8">
     <title>My Website</title>
     <style>
-        /* Existing styles... (keep your existing CSS here) */
-    </style>
-    <!-- Include the new styles for the overlay and animations -->
-    <style>
-        /* Styles for the overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black; /* Optional background color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 4; /* Above all other elements */
-            overflow: hidden;
+        /* Existing styles (from your previous code) */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/agrb.png'); /* Initial background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden; /* Prevent scrollbars during animation */
         }
-
-        .overlay img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .rectangle {
+            opacity: 0; /* Hide main content initially */
+            transition: opacity 1s; /* Smooth fade-in effect */
         }
+        /* ... (Include all your existing styles for .logo-container, .logo, .bottom-right, etc.) */
 
-        /* Animation keyframes */
-        @keyframes zoomOut {
+        /* Animation keyframes for background zoom */
+        @keyframes backgroundZoom {
             0% {
                 transform: scale(1);
-                opacity: 1;
             }
             100% {
                 transform: scale(1.5);
-                opacity: 0;
             }
         }
-
-        /* Apply the animation to the overlay image */
-        .overlay.zoom-out img {
-            animation: zoomOut 2s forwards;
+        /* Apply the animation to the body when the zoom class is added */
+        .zoom-animation {
+            animation: backgroundZoom 2s forwards;
+        }
+        /* Show the main content when the show-content class is added */
+        .show-content {
+            opacity: 1;
         }
     </style>
 </head>
-<body>
-    <!-- Overlay with agrb.jpeg logo -->
-    <div class="overlay" id="overlay">
-        <img src="images/agrb.jpeg" alt="AGRB Logo">
-    </div>
-
-    <!-- Existing content -->
-    <div class="rectangle">
-        <!-- Your existing quadrants and logos -->
+<body id="body">
+    <!-- Main Content -->
+    <div class="rectangle" id="mainContent">
         <!-- Quadrant 1 -->
         <div class="logo-container">
             <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
@@ -87,21 +74,19 @@
         <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo">
     </div>
 
-    <!-- JavaScript to control the overlay -->
+    <!-- JavaScript to control the animation -->
     <script>
-        // Wait for the page to load
         window.addEventListener('load', function() {
-            // Wait 3 seconds before starting the animation
+            // Wait 2 seconds before starting the zoom effect
             setTimeout(function() {
-                // Add the zoom-out class to trigger the animation
-                document.getElementById('overlay').classList.add('zoom-out');
+                // Add the zoom-animation class to start the zoom effect
+                document.getElementById('body').classList.add('zoom-animation');
 
-                // Remove the overlay after the animation completes (2 seconds)
+                // After the zoom effect, show the main content
                 setTimeout(function() {
-                    var overlay = document.getElementById('overlay');
-                    overlay.parentNode.removeChild(overlay);
-                }, 2000); // Match the duration of the animation
-            }, 3000); // Delay before starting the zoom effect
+                    document.getElementById('mainContent').classList.add('show-content');
+                }, 2000); // Duration of the zoom effect
+            }, 2000); // Initial delay before starting the zoom
         });
     </script>
 </body>
