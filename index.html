@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>My Website</title>
     <style>
-        /* Existing styles remain unchanged */
+        /* Existing styles remain unchanged except where noted */
 
         body {
             margin: 0;
@@ -65,8 +65,8 @@
 
         /* Logos in quadrants 1, 2, and 3 */
         .logo {
-            height: 100%;
-            width: auto;
+            width: 100%; /* Fill the width of the container */
+            height: auto; /* Adjust height proportionally */
             object-fit: contain; /* Maintain aspect ratio without cropping */
             transition: filter 0.3s; /* Smooth transition for hover effect */
             opacity: 0; /* Start hidden */
@@ -142,10 +142,11 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); /* Center the logo */
-            max-width: 40%; /* Increased size */
-            max-height: 40%; /* Increased size */
+            max-width: 40%; /* Adjust size as needed */
+            max-height: 40%; /* Adjust size as needed */
             z-index: 3; /* Ensure it's above other content */
             transition: filter 0.3s; /* Smooth transition for hover effect */
+            /* pointer-events: none; */ /* If you want the center logo to be clickable */
             opacity: 0; /* Start hidden */
         }
 
