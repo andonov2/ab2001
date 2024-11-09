@@ -65,20 +65,26 @@
         .bottom-right {
             display: grid;
             grid-template-rows: repeat(3, 1fr); /* Three equal rows */
+            position: relative; /* Ensure relative positioning for pseudo-elements */
         }
+
+        /* Horizontal dividing lines for bottom-right quadrant */
         .bottom-right::before,
         .bottom-right::after {
             content: '';
             position: absolute;
-            left: calc(50% + 2px); /* Start after the vertical divider */
+            left: 0;
             right: 0;
-            height: 2px; /* Horizontal dividing lines */
+            height: 2px; /* Thickness of the dividing lines */
+            background-color: black; /* Black color for the lines */
         }
+
         .bottom-right::before {
-            top: calc(50% + (50% / 3)); /* First dividing line */
+            top: calc(33.33%); /* First dividing line (after first third) */
         }
+
         .bottom-right::after {
-            top: calc(50% + (100% / 3)); /* Second dividing line */
+            top: calc(66.66%); /* Second dividing line (after second third) */
         }
     </style>
 </head>
