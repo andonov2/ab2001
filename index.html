@@ -47,19 +47,29 @@
             right: 0;
             height: 2px;
         }
+        .logo-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
         .logo {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            max-width: calc(50% - 20px);
-            max-height: calc(50% - 20px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
+            padding: 5px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
     <div class="rectangle">
-        <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+        <div class="logo-container">
+            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+        </div>
     </div>
 </body>
 </html>
