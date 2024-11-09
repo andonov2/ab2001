@@ -73,9 +73,9 @@
         .bottom-right::after {
             content: '';
             position: absolute;
-            left: 0;
+            left: calc(50% + 2px); /* Start after vertical divider */
             right: 0;
-            height: 2px; /* Thickness of the dividing lines */
+            height: 2px; /* Thickness of dividing lines */
             background-color: black; /* Black color for the lines */
         }
 
@@ -86,27 +86,47 @@
         .bottom-right::after {
             top: calc(66.66%); /* Second dividing line (after second third) */
         }
+
+        /* Agrobel-Hellas logo in the top section of the bottom-right quadrant */
+        .agrobel-hellas-container {
+           grid-row-start: 1; /* Place it in the first row of bottom-right quadrant */
+           width: 100%;
+           height: calc(100% / 3); /* Ensure it fits within one-third of the height */
+           display:flex;
+           justify-content:center; 
+           align-items:center; 
+       }
     </style>
 </head>
 <body>
     <div class="rectangle">
-        <!-- Top-left logo (Agrobel) -->
-        <div class="logo-container">
-            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
-        </div>
+        
+         <!-- Top-left logo (Agrobel) -->
+         <div class="logo-container">
+             <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+         </div>
 
-        <!-- Top-right logo (Belbultrans) -->
-        <div class="logo-container">
-            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
-        </div>
+         <!-- Top-right logo (Belbultrans) -->
+         <div class="logo-container">
+             <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+         </div>
 
-        <!-- Bottom-left logo (Agromel) -->
-        <div class="logo-container">
-            <img src="images/agromel.png" alt="Agromel Logo" class="logo">
-        </div>
+         <!-- Bottom-left logo (Agromel) -->
+         <div class="logo-container">
+             <img src="images/agromel.png" alt="Agromel Logo" class="logo">
+         </div>
 
-        <!-- Bottom-right quadrant split into three horizontal parts -->
-        <div class="logo-container bottom-right"></div>
+         <!-- Bottom-right quadrant split into three horizontal parts -->
+         <div class="logo-container bottom-right">
+             
+             <!-- Agrobel-Hellas logo in top section -->
+             <div class="agrobel-hellas-container">
+                 <img src="images/agrobel-hellas.png" alt="Agrobel Hellas Logo" class="logo">
+             </div>
+
+             <!-- Add other sections here later if needed -->
+
+         </div>
         
     </div>
 </body>
