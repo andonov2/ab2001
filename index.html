@@ -47,36 +47,36 @@
             right: 0;
             height: 2px;
         }
+        /* Logo container for each quadrant */
         .logo-container {
             position: relative;
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
+        /* Ensure logos fill their respective quadrants */
         .logo {
             position: absolute;
-            width: 45%;
-            height: 45%;
-            object-fit: contain;
-        }
-        .agrobel {
-            top: 10px;
-            left: 10px;
-        }
-        .belbultrans {
-            top: 10px;
-            right: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Maintain aspect ratio without cropping */
         }
     </style>
 </head>
 <body>
     <div class="rectangle">
+        <!-- Top-left logo -->
         <div class="logo-container">
-            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo agrobel">
+            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
         </div>
+        
+        <!-- Top-right logo -->
         <div class="logo-container">
-            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo belbultrans">
+            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
         </div>
+        
     </div>
 </body>
 </html>
+
