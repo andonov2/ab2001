@@ -86,6 +86,19 @@
         .bottom-right::after {
             top: calc(66.66%); /* Second dividing line at 2/3 height */
         }
+
+        /* Style for subquadrants in bottom-right quadrant */
+        .bottom-right .subquadrant {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Ensure images in subquadrants fill their space */
+        .bottom-right .subquadrant .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -106,7 +119,20 @@
         </div>
 
         <!-- Bottom-right quadrant split into three horizontal parts -->
-        <div class="logo-container bottom-right"></div>
+        <div class="logo-container bottom-right">
+            <!-- First subquadrant with Agrobel-Hellas logo -->
+            <div class="subquadrant">
+                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="logo">
+            </div>
+            <!-- Second subquadrant (empty or add content here) -->
+            <div class="subquadrant">
+                <!-- Optional content -->
+            </div>
+            <!-- Third subquadrant (empty or add content here) -->
+            <div class="subquadrant">
+                <!-- Optional content -->
+            </div>
+        </div>
     </div>
 </body>
 </html>
