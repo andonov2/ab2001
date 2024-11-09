@@ -60,6 +60,26 @@
             height: 100%;
             object-fit: cover; /* Fill the container while maintaining aspect ratio */
         }
+
+        /* Bottom-right quadrant split into three horizontal sections */
+        .bottom-right {
+            display: grid;
+            grid-template-rows: repeat(3, 1fr); /* Three equal rows */
+        }
+        .bottom-right::before,
+        .bottom-right::after {
+            content: '';
+            position: absolute;
+            left: calc(50% + 2px); /* Start after the vertical divider */
+            right: 0;
+            height: 2px; /* Horizontal dividing lines */
+        }
+        .bottom-right::before {
+            top: calc(50% + (50% / 3)); /* First dividing line */
+        }
+        .bottom-right::after {
+            top: calc(50% + (100% / 3)); /* Second dividing line */
+        }
     </style>
 </head>
 <body>
@@ -78,6 +98,9 @@
         <div class="logo-container">
             <img src="images/agromel.png" alt="Agromel Logo" class="logo">
         </div>
+
+        <!-- Bottom-right quadrant split into three horizontal parts -->
+        <div class="logo-container bottom-right"></div>
         
     </div>
 </body>
