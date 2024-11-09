@@ -56,7 +56,7 @@
 
         /* Ensure each logo fills its container fully */
         .logo {
-            width: 100%;
+            width: calc(100% + 2px); /* Extend logos to touch right border */
             height: 100%;
             object-fit: cover; /* Fill the container while maintaining aspect ratio */
         }
@@ -79,11 +79,11 @@
         }
 
         .bottom-right::before {
-            top: calc(50% + (33.33% / 2)); /* First dividing line (after first third) */
+            top: calc(33.33%); /* First dividing line (after first third) */
         }
 
         .bottom-right::after {
-            top: calc(50% + (66.66% / 2)); /* Second dividing line (after second third) */
+            top: calc(66.66%); /* Second dividing line (after second third) */
         }
     </style>
 </head>
