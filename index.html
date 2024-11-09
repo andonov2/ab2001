@@ -86,6 +86,12 @@
         .bottom-right::after {
             top: calc(66.66%); /* Second dividing line (after second third) */
         }
+
+        /* Agrobel-Hellas logo in the top section of the bottom-right quadrant */
+        .agrobel-hellas-container {
+            grid-row-start: 1; /* Place it in the first row of bottom-right quadrant */
+        }
+
     </style>
 </head>
 <body>
@@ -106,7 +112,16 @@
         </div>
 
         <!-- Bottom-right quadrant split into three horizontal parts -->
-        <div class="logo-container bottom-right"></div>
+        <div class="logo-container bottom-right">
+            
+           <!-- Agrobel-Hellas logo in top section -->
+           <div class="agrobel-hellas-container">
+               <img src="images/agrobel-hellas.png" alt="Agrobel Hellas Logo" class="logo">
+           </div>
+
+           <!-- Add other sections here later if needed -->
+
+       </div>
         
     </div>
 </body>
