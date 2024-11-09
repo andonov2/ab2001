@@ -108,27 +108,26 @@
             position: relative; /* Ensure proper stacking context */
         }
 
-        /* Logos in subquadrants */
+        /* Default styles for logos in subquadrants */
         .sub-logo {
+            height: auto;
+            object-fit: contain; /* Maintain aspect ratio without cropping */
+        }
+
+        /* Specific styling for widening logos in subquadrants */
+        /* First subquadrant (Agrobel-Hellas logo) */
+        .bottom-right .subquadrant:nth-child(1) .sub-logo {
             width: 120%; /* Increase width by 20% */
-            height: 100%;
-            object-fit: fill; /* Stretch image horizontally */
         }
 
-        /* Ensure only the 4th and 5th logos are widened */
-        .subquadrant:nth-child(1) .sub-logo,
-        .subquadrant:nth-child(2) .sub-logo {
-            width: 120%; /* Widen by 20% */
-            height: 100%; /* Keep height unchanged */
-            object-fit: fill; /* Stretch image horizontally */
+        /* Second subquadrant (CSR logo) */
+        .bottom-right .subquadrant:nth-child(2) .sub-logo {
+            width: 120%; /* Increase width by 20% */
         }
 
-        /* Reset any width changes for other subquadrants (if any) */
-        .subquadrant:nth-child(n+3) .sub-logo {
-            width: auto;
-            max-width: 100%;
-            height: 100%;
-            object-fit: contain;
+        /* Third subquadrant (Agrimachin logo) */
+        .bottom-right .subquadrant:nth-child(3) .sub-logo {
+            width: 120%; /* Increase width by 20% */
         }
     </style>
 </head>
@@ -159,9 +158,9 @@
             <div class="subquadrant">
                 <img src="images/csr.png" alt="CSR Logo" class="sub-logo">
             </div>
-            <!-- Third subquadrant (empty or add content here) -->
+            <!-- Third subquadrant with Agrimachin logo -->
             <div class="subquadrant">
-                <!-- Optional content -->
+                <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo">
             </div>
         </div>
     </div>
