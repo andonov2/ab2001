@@ -31,24 +31,25 @@
             grid-template-rows: 1fr 1fr;    /* Two equal rows */
             box-sizing: border-box;
         }
+        /* Updated the color and thickness of the dividing lines */
         .rectangle::before,
         .rectangle::after {
             content: '';
             position: absolute;
-            background-color: black;
+            background-color: #e7be40; /* Changed color from black to #e7be40 */
             z-index: 2; /* Bring lines above images */
         }
         .rectangle::before {
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 2px; /* Vertical line */
+            width: 4px; /* Increased width from 2px to 4px for vertical line */
         }
         .rectangle::after {
             top: 50%;
             left: 0;
             right: 0;
-            height: 2px; /* Horizontal line */
+            height: 4px; /* Increased height from 2px to 4px for horizontal line */
         }
 
         /* Logo Containers */
@@ -79,17 +80,16 @@
             position: relative;
             overflow: hidden;
         }
-
-        /* Dividing Lines in Bottom-right Quadrant */
+        /* Updated the color and thickness of the dividing lines in the bottom-right quadrant */
         .bottom-right::before,
         .bottom-right::after {
             content: '';
             position: absolute;
-            background-color: black;
+            background-color: #e7be40; /* Changed color from black to #e7be40 */
             z-index: 2;
             left: 0;
             right: 0;
-            height: 2px;
+            height: 4px; /* Increased height from 2px to 4px */
         }
         .bottom-right::before {
             top: calc(33.33%); /* First dividing line */
