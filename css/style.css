@@ -1,5 +1,6 @@
 body {
-    background-image: url('background.jpeg');
+    background-image: url('./images/background.jpeg');
+    background-color: #f0f0f0; /* Fallback color */
     background-size: cover;
     background-position: center;
     height: 100vh;
