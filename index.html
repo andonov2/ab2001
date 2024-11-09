@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- [Your existing head content] -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
     <style>
-        /* [Your existing styles] */
-        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .rectangle {
+            width: 70%;
+            height: 60%;
+            border: 2px solid black;
+            background-color: rgba(255, 255, 255, 0.1);
+            position: relative;
+            top: -10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            grid-template-rows: 1fr 1fr; /* Two equal rows */
+        }
+        .rectangle::before,
+        .rectangle::after {
+            content: '';
+            position: absolute;
+            background-color: black;
+        }
+        .rectangle::before {
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px; /* Vertical line */
+        }
+        .rectangle::after {
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px; /* Horizontal line */
+        }
+
+        /* Ensure each logo container takes up its full quadrant */
+        .logo-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Ensure each logo fills its container fully */
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fill the container while maintaining aspect ratio */
+        }
+
+        /* Bottom-right quadrant split into three horizontal sections */
         .bottom-right {
             display: grid;
             grid-template-rows: repeat(3, 1fr); /* Three equal rows */
@@ -32,6 +89,24 @@
     </style>
 </head>
 <body>
-    <!-- [Your existing body content] -->
+    <div class="rectangle">
+        <!-- Top-left logo (Agrobel) -->
+        <div class="logo-container">
+            <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo">
+        </div>
+
+        <!-- Top-right logo (Belbultrans) -->
+        <div class="logo-container">
+            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo">
+        </div>
+
+        <!-- Bottom-left logo (Agromel) -->
+        <div class="logo-container">
+            <img src="images/agromel.png" alt="Agromel Logo" class="logo">
+        </div>
+
+        <!-- Bottom-right quadrant split into three horizontal parts -->
+        <div class="logo-container bottom-right"></div>
+    </div>
 </body>
 </html>
