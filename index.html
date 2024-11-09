@@ -49,7 +49,7 @@
             height: 2px; /* Horizontal line */
         }
 
-        /* Ensure each logo container takes up its full quadrant */
+        /* Logo containers for quadrants 1, 2, and 3 */
         .logo-container {
             display: flex;
             justify-content: center;
@@ -60,10 +60,10 @@
             box-sizing: border-box;
         }
 
-        /* Ensure each logo maintains its aspect ratio */
+        /* Logos in quadrants 1, 2, and 3 */
         .logo {
-            max-width: 100%;
-            max-height: 100%;
+            height: 100%;
+            width: auto;
             object-fit: contain; /* Maintain aspect ratio without cropping */
         }
 
@@ -98,16 +98,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 5%; /* Add padding to create space around content */
+            padding: 5%; /* Adjust as needed */
             box-sizing: border-box;
             overflow: hidden; /* Prevent content from overflowing */
         }
 
-        /* Ensure images in subquadrants maintain aspect ratio */
-        .bottom-right .subquadrant .logo {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        /* Logos in subquadrants */
+        .subquadrant .sub-logo {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Maintain aspect ratio without cropping */
         }
     </style>
 </head>
@@ -132,7 +132,7 @@
         <div class="logo-container bottom-right">
             <!-- First subquadrant with Agrobel-Hellas logo -->
             <div class="subquadrant">
-                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="logo">
+                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo">
             </div>
             <!-- Second subquadrant (empty or add content here) -->
             <div class="subquadrant">
