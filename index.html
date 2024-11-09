@@ -19,8 +19,10 @@
             align-items: center;
         }
         .rectangle {
-            width: 800px;   /* Fixed width */
-            height: 600px;  /* Fixed height */
+            width: 80vw;   /* Width is 80% of viewport width */
+            max-width: 800px; /* Maximum width */
+            height: 60vh;  /* Height is 60% of viewport height */
+            max-height: 600px; /* Maximum height */
             border: 2px solid black;
             background-color: rgba(255, 255, 255, 0.1);
             position: relative;
@@ -63,8 +65,8 @@
 
         /* Logos in Quadrants 1, 2, and 3 */
         .logo {
-            width: 200px;   /* Fixed width */
-            height: 150px;  /* Fixed height */
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
@@ -109,8 +111,8 @@
 
         /* Logos in Subquadrants */
         .sub-logo {
-            width: 180px;  /* Fixed width */
-            height: 100px; /* Fixed height */
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
@@ -119,17 +121,17 @@
         /* Specific Styling for Widened Logos */
         /* First subquadrant (Agrobel-Hellas logo) */
         .bottom-right .subquadrant:nth-child(1) .sub-logo {
-            width: 216px; /* Increased width by 20% */
+            width: 120%; /* Increase width by 20% */
         }
 
         /* Second subquadrant (CSR logo) */
         .bottom-right .subquadrant:nth-child(2) .sub-logo {
-            width: 216px; /* Increased width by 20% */
+            width: 120%; /* Increase width by 20% */
         }
 
         /* Third subquadrant (Agrimachin logo) */
         .bottom-right .subquadrant:nth-child(3) .sub-logo {
-            width: 216px; /* Increased width by 20% */
+            width: 120%; /* Increase width by 20% */
         }
 
         /* Center Overlaid Logo */
@@ -138,9 +140,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px;  /* Fixed width */
+            width: 40%;  /* Width is 40% of the rectangle */
             height: auto;
-            max-height: 50%; /* Ensure it doesn't exceed 50% of rectangle's height */
+            max-width: 320px; /* Maximum width */
             z-index: 3;
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
@@ -190,6 +192,18 @@
         .logo7 {
             animation: fadeIn 1s forwards;
             animation-delay: 3s;
+        }
+
+        /* Ensuring the rectangle does not exceed the viewport */
+        @media (max-width: 800px) {
+            .rectangle {
+                width: 80vw;
+            }
+        }
+        @media (max-height: 600px) {
+            .rectangle {
+                height: 60vh;
+            }
         }
     </style>
 </head>
