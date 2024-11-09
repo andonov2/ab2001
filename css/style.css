@@ -1,5 +1,5 @@
 body {
-    background-image: url('./images/background.jpeg');
+    background-image: url('https://ab2001.pages.dev/images/background.jpeg');
     background-color: #f0f0f0; /* Fallback color */
     background-size: cover;
     background-position: center;
