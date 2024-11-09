@@ -73,17 +73,17 @@
             content: '';
             position: absolute;
             left: calc(50% + 2px); /* Start after vertical divider */
-            right: 0;
+            right: calc(2px); /* Offset from right edge */
             height: 2px; /* Thickness of dividing lines */
             background-color: black; /* Black color for the lines */
         }
 
         .bottom-right::before {
-            top: calc(33.33%); /* First dividing line (after first third) */
+            top: calc(50% + (33.33% / 2)); /* First dividing line (after first third) */
         }
 
         .bottom-right::after {
-            top: calc(66.66%); /* Second dividing line (after second third) */
+            top: calc(50% + (66.66% / 2)); /* Second dividing line (after second third) */
         }
     </style>
 </head>
