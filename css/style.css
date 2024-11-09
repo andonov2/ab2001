@@ -1,68 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGRO-BEL 2001</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-</head>
-<body>
-
-<!-- Language Switch Flags -->
-<div class="flags">
-    <a href="#"><img src="https://i.ibb.co/NpXB80g/1280px-Flag-of-Bulgaria-svg.png" alt="Bulgarian"></a>
-    <a href="#"><img src="https://i.ibb.co/zX5bjS9/1600px-English-language-svg.png" alt="English"></a>
-</div>
-
-<!-- Social Media Links (To be added later) -->
-<div class="social-links">
-   <!-- Add social media icons here -->
-</div>
-
-<!-- Main Content -->
-<div class="container">
-
-   <!-- AGROBEL Logo (Center) -->
-   <div class="center-logo">
-       <img src="https://i.ibb.co/F72LKVt/agro-bg2.png" alt="AGROBEL Center Logo">
-   </div>
-
-   <!-- AGROBEL Vegetables Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/GQz1Ndk/Capture223.png" alt="AGROBEL Vegetables Logo">
-   </div>
-
-   <!-- BELBULTRANS Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/qRb7X01/Belbul-white-backgrbgbg.png" alt="BELBULTRANS Logo">
-   </div>
-
-   <!-- AGRO-MEL Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/ynLk8qj/blog-picture-1.png" alt="AGRO-MEL Logo">
-   </div>
-
-   <!-- AGROBEL HELLAS Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/FDzNmCF/121314.png" alt="AGROBEL HELLAS Logo">
-   </div>
-
-   <!-- CSR Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/cCBGbsc/AGROBEL-CSR.png" alt="Corporate Social Responsibility Logo">
-   </div>
-
-   <!-- AGRIMACHIN Logo -->
-   <div class="logo">
-       <img src="https://i.ibb.co/VBrV74c/agrima7.png" alt="AGRIMACHIN Logo">
-   </div>
-
-</div>
-
-<!-- Footer -->
-<footer>
-   ©2024 AGRO-BEL 2001 EOOD Всички права запазени.
-</footer>
-
-</body>
-</html>
+body {
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
