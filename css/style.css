@@ -1,9 +1,266 @@
+/* Base Styles */
 body {
-    background-image: url('https://ab2001.pages.dev/images/background.jpeg');
-    background-color: #f0f0f0; /* Fallback color */
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.jpeg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
-    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.rectangle {
+    width: 80vw;   /* Width is 80% of viewport width */
+    max-width: 800px; /* Maximum width */
+    height: 60vh;  /* Height is 60% of viewport height */
+    max-height: 600px; /* Maximum height */
+    border: 3px solid #e7be40; /* Border color and thickness */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: 1fr 1fr;    /* Two equal rows */
+    box-sizing: border-box;
+}
+
+/* Dividing Lines */
+.rectangle::before,
+.rectangle::after {
+    content: '';
+    position: absolute;
+    background-color: #e7be40; /* Border color */
+    z-index: 2; /* Bring lines above images */
+}
+
+.rectangle::before {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px; /* Vertical dividing line */
+}
+
+.rectangle::after {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px; /* Horizontal dividing line */
+}
+
+/* Logo Containers */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Anchor Tags inside Logo Containers */
+.logo-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Logos */
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s;
+    opacity: 0; /* Start hidden */
+}
+
+/* Bottom-right Quadrant Split into Three Sections */
+.bottom-right {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dividing lines in the bottom-right quadrant */
+.bottom-right::before,
+.bottom-right::after {
+    content: '';
+    position: absolute;
+    background-color: #e7be40; /* Border color */
+    z-index: 2; /* Bring lines above images */
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.bottom-right::before {
+    top: calc(33.33%);
+}
+
+.bottom-right::after {
+    top: calc(66.66%);
+}
+
+/* Subquadrant Containers */
+.bottom-right .subquadrant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Logos in Subquadrants */
+.sub-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s;
+    opacity: 0; /* Start hidden */
+}
+
+/* Specific Styling for Widened Logos */
+.bottom-right .subquadrant:nth-child(1) .sub-logo,
+.bottom-right .subquadrant:nth-child(2) .sub-logo {
+    width: 120%; /* Increase width by 20% */
+    height: auto;
+}
+
+/* Sixth Logo */
+.bottom-right .subquadrant:nth-child(3) .sub-logo {
+    width: auto;
+    height: 100%; /* Fill the height of the container */
+}
+
+/* Center Overlaid Logo */
+.center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;  /* Width is 40% of the rectangle */
+    height: auto;
+    max-width: 320px; /* Maximum width */
+    z-index: 3;
+    transition: filter 0.3s;
+    opacity: 0; /* Start hidden */
+}
+
+/* Hover Effect for All Logos, Flags, and Social Media Icons */
+.logo:hover,
+.sub-logo:hover,
+.center-logo:hover,
+.flag:hover,
+.social-icon:hover {
+    filter: blur(3px);
+    transform: scale(1.05);
+}
+
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation for Logos Appearing Sequentially */
+.logo1 {
+    animation: fadeIn 1s forwards;
+}
+
+.logo2 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.logo3 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+.logo4 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.5s;
+}
+
+.logo5 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 2s;
+}
+
+.logo6 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 2.5s;
+}
+
+.logo7 {
+    animation: fadeIn 1s forwards;
+    animation-delay: 3s;
+}
+
+/* Language Flags */
+.flag-container {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    display: flex;
+    z-index: 5;
+}
+
+.flag {
+    width: 26px;
+    height: 18px;
+    margin-right: 5px;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+/* Footer Text */
+.footer-text {
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    font-size: 12px;
+    color: white;
+    z-index: 5;
+}
+
+/* Social Media Icons */
+.social-media {
+    position: absolute;
+    top: -30px; /* Adjusted to move icons up */
+    right: 0px;
+    display: flex;
+    z-index: 5;
+}
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+    margin-left: 5px;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+/* Adjust the last icon to align with the right border */
+.social-media .social-icon:last-child {
+    margin-right: 0px;
 }
