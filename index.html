@@ -19,37 +19,37 @@
             align-items: center;
         }
         .rectangle {
-            width: 80vw;   /* Width is 80% of viewport width */
-            max-width: 800px; /* Maximum width */
-            height: 60vh;  /* Height is 60% of viewport height */
-            max-height: 600px; /* Maximum height */
-            border: 3px solid #e7be40; /* Updated border color and thickness */
+            width: 80vw;
+            max-width: 800px;
+            height: 60vh;
+            max-height: 600px;
+            border: 3px solid #e7be40;
             background-color: rgba(255, 255, 255, 0.1);
             position: relative;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
-            grid-template-rows: 1fr 1fr;    /* Two equal rows */
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             box-sizing: border-box;
         }
-        /* Updated the color and thickness of the dividing lines */
+        /* Dividing Lines */
         .rectangle::before,
         .rectangle::after {
             content: '';
             position: absolute;
-            background-color: #e7be40; /* Changed color from black to #e7be40 */
-            z-index: 2; /* Bring lines above images */
+            background-color: #e7be40;
+            z-index: 2;
         }
         .rectangle::before {
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 3px; /* Increased width for vertical line */
+            width: 3px;
         }
         .rectangle::after {
             top: 50%;
             left: 0;
             right: 0;
-            height: 3px; /* Increased height for horizontal line */
+            height: 3px;
         }
 
         /* Logo Containers */
@@ -64,23 +64,24 @@
             position: relative;
         }
 
-        /* Logos in Quadrants 1, 2, and 3 */
-        .logo {
+        /* Adjusted CSS for Images Inside Links */
+        .logo-container img.logo,
+        .subquadrant img.sub-logo,
+        img.center-logo {
             width: auto;
-            height: 100%; /* Fill the height of the container */
-            object-fit: contain; /* Maintain aspect ratio */
+            height: 100%;
+            object-fit: contain;
             transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
+            opacity: 0;
         }
 
-        /* Bottom-right Quadrant Split into Three Sections */
+        /* Bottom-right Quadrant */
         .bottom-right {
             display: grid;
             grid-template-rows: repeat(3, 1fr);
             position: relative;
             overflow: hidden;
         }
-        /* Dividing lines in the bottom-right quadrant */
         .bottom-right::before,
         .bottom-right::after {
             content: '';
@@ -111,87 +112,64 @@
         }
 
         /* Logos in Subquadrants */
-        .sub-logo {
-            width: 100%; /* Fill the width of the container */
+        .subquadrant img.sub-logo {
+            width: 100%;
             height: auto;
             object-fit: contain;
             transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
+            opacity: 0;
         }
 
-        /* Specific Styling for Widened Logos */
-        .bottom-right .subquadrant:nth-child(1) .sub-logo,
-        .bottom-right .subquadrant:nth-child(2) .sub-logo {
-            width: 120%; /* Increase width by 20% */
+        /* Widened Logos */
+        .bottom-right .subquadrant:nth-child(1) img.sub-logo,
+        .bottom-right .subquadrant:nth-child(2) img.sub-logo {
+            width: 120%;
+            height: auto;
         }
 
         /* Sixth Logo */
-        .bottom-right .subquadrant:nth-child(3) .sub-logo {
+        .bottom-right .subquadrant:nth-child(3) img.sub-logo {
             width: auto;
-            height: 100%; /* Fill the height of the container */
+            height: 100%;
         }
 
         /* Center Overlaid Logo */
-        .center-logo {
+        img.center-logo {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40%;  /* Width is 40% of the rectangle */
+            width: 40%;
             height: auto;
-            max-width: 320px; /* Maximum width */
+            max-width: 320px;
             z-index: 3;
             transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
+            opacity: 0;
         }
 
-        /* Hover Effect for All Logos, Flags, and Social Media Icons */
-        .logo:hover,
-        .sub-logo:hover,
-        .center-logo:hover,
+        /* Hover Effect */
+        .logo-container img.logo:hover,
+        .subquadrant img.sub-logo:hover,
+        img.center-logo:hover,
         .flag:hover,
         .social-icon:hover {
             filter: blur(3px);
         }
 
-        /* Keyframes for Fade-in Animation */
+        /* Fade-in Animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        /* Animation for Logos Appearing Sequentially */
-        .logo1 {
-            animation: fadeIn 1s forwards;
-        }
-        .logo2 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 0.5s;
-        }
-        .logo3 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 1s;
-        }
-        .logo4 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 1.5s;
-        }
-        .logo5 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 2s;
-        }
-        .logo6 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 2.5s;
-        }
-        .logo7 {
-            animation: fadeIn 1s forwards;
-            animation-delay: 3s;
-        }
+        /* Animation Classes */
+        .logo1 { animation: fadeIn 1s forwards; }
+        .logo2 { animation: fadeIn 1s forwards 0.5s; }
+        .logo3 { animation: fadeIn 1s forwards 1s; }
+        .logo4 { animation: fadeIn 1s forwards 1.5s; }
+        .logo5 { animation: fadeIn 1s forwards 2s; }
+        .logo6 { animation: fadeIn 1s forwards 2.5s; }
+        .logo7 { animation: fadeIn 1s forwards 3s; }
 
         /* Language Flags */
         .flag-container {
@@ -265,7 +243,7 @@
 
         <!-- Top-left Logo (Quadrant 1, logo1) -->
         <div class="logo-container">
-            <a href="agrobel2001.html">
+            <a href="agrobel2001.html" target="_blank">
                 <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo logo1">
             </a>
         </div>
@@ -280,7 +258,7 @@
             <img src="images/agromel.png" alt="Agromel Logo" class="logo logo3">
         </div>
 
-        <!-- Bottom-right Quadrant (Quadrant 4) Split into Three Sections -->
+        <!-- Bottom-right Quadrant (Quadrant 4) -->
         <div class="logo-container bottom-right">
             <!-- First Subquadrant with Agrobel-Hellas Logo (logo4) -->
             <div class="subquadrant">
