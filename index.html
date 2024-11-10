@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Website</title>
+    <title>AGRO-BEL 2001 EOOD</title>
     <style>
         /* Base Styles */
         body {
@@ -13,291 +13,190 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-        .rectangle {
-            width: 80vw;   /* Width is 80% of viewport width */
-            max-width: 800px; /* Maximum width */
-            height: 60vh;  /* Height is 60% of viewport height */
-            max-height: 600px; /* Maximum height */
-            border: 3px solid #e7be40; /* Updated border color and thickness */
-            background-color: rgba(255, 255, 255, 0.1);
-            position: relative;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Two equal columns */
-            grid-template-rows: 1fr 1fr;    /* Two equal rows */
-            box-sizing: border-box;
-        }
-        /* Dividing Lines */
-        .rectangle::before,
-        .rectangle::after {
-            content: '';
-            position: absolute;
-            background-color: #e7be40; /* Changed color from black to #e7be40 */
-            z-index: 2; /* Bring lines above images */
-        }
-        .rectangle::before {
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 3px; /* Increased width for vertical line */
-        }
-        .rectangle::after {
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 3px; /* Increased height for horizontal line */
-        }
-
-        /* Logo Containers */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
+            font-family: Arial, sans-serif;
             position: relative;
         }
 
-        /* Anchor Tags inside Logo Containers */
-        .logo-container a {
+        /* Container for All Content */
+        .container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        /* Logos */
-        .logo {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
-        }
-
-        /* Bottom-right Quadrant */
-        .bottom-right {
-            display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            position: relative;
-            overflow: hidden;
-        }
-        .bottom-right::before,
-        .bottom-right::after {
-            content: '';
-            position: absolute;
-            background-color: #e7be40;
-            z-index: 2;
-            left: 0;
-            right: 0;
-            height: 3px;
-        }
-        .bottom-right::before {
-            top: calc(33.33%);
-        }
-        .bottom-right::after {
-            top: calc(66.66%);
-        }
-
-        /* Subquadrant Containers */
-        .bottom-right .subquadrant {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
             position: relative;
         }
 
-        /* Anchor Tags in Subquadrants */
-        .bottom-right .subquadrant a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Top Section: Flags and Social Media Icons */
+        .top-section {
             width: 100%;
-            height: 100%;
-            text-decoration: none; /* Remove underline from links */
-        }
-
-        /* Logos in Subquadrants */
-        .sub-logo {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
-        }
-
-        /* Specific Styling for Widened Logos */
-        .bottom-right .subquadrant:nth-child(1) .sub-logo,
-        .bottom-right .subquadrant:nth-child(2) .sub-logo {
-            width: 120%; /* Increase width by 20% */
-            height: auto;
-        }
-
-        /* Sixth Logo */
-        .bottom-right .subquadrant:nth-child(3) .sub-logo {
-            width: auto;
-            height: 100%; /* Fill the height of the container */
-        }
-
-        /* Center Overlaid Logo */
-        .center-logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;  /* Width is 40% of the rectangle */
-            height: auto;
-            max-width: 320px; /* Maximum width */
-            z-index: 3;
-            transition: filter 0.3s;
-            opacity: 0; /* Start hidden */
-        }
-
-        /* Hover Effect */
-        .logo:hover,
-        .sub-logo:hover,
-        .center-logo:hover,
-        .flag:hover,
-        .social-icon:hover {
-            filter: blur(3px);
-        }
-
-        /* Fade-in Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Animation Classes */
-        .logo1 { animation: fadeIn 1s forwards; }
-        .logo2 { animation: fadeIn 1s forwards 0.5s; }
-        .logo3 { animation: fadeIn 1s forwards 1s; }
-        .logo4 { animation: fadeIn 1s forwards 1.5s; }
-        .logo5 { animation: fadeIn 1s forwards 2s; }
-        .logo6 { animation: fadeIn 1s forwards 2.5s; }
-        .logo7 { animation: fadeIn 1s forwards 3s; }
-
-        /* Language Flags */
-        .flag-container {
-            position: absolute;
-            top: -25px;
-            left: 0px;
             display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            right: 20px;
             z-index: 5;
         }
 
+        /* Language Flags */
+        .flag-container {
+            display: flex;
+        }
+
         .flag {
-            width: 26px;
-            height: 18px;
+            width: 28px;   /* Increased size by ~10% */
+            height: 20px;  /* Increased size by ~10% */
             margin-right: 5px;
+            transition: filter 0.3s;
+        }
+
+        /* Social Media Icons */
+        .social-media {
+            display: flex;
+        }
+
+        .social-icon {
+            width: 28px;    /* Increased size to match flags */
+            height: 28px;   /* Maintains aspect ratio */
+            margin-left: 5px;
             transition: filter 0.3s;
         }
 
         /* Footer Text */
         .footer-text {
             position: absolute;
-            bottom: -20px;
-            left: 0px;
+            bottom: 10px;
+            left: 20px;
             font-size: 12px;
             color: white;
             z-index: 5;
         }
 
-        /* Social Media Icons */
-        .social-media {
-            position: absolute;
-            top: -30px; /* Moved up by setting to -30px */
-            right: 0px;
+        /* Logos Grid */
+        .logos-grid {
             display: flex;
-            z-index: 5;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px; /* Adds space around logos */
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 3px solid #e7be40;
+            border-radius: 10px; /* Optional: Rounds the corners */
         }
 
-        .social-icon {
-            width: 26px;
-            height: 26px;
-            margin-left: 5px;
-            transition: filter 0.3s;
+        /* Individual Logo Containers */
+        .logo-container {
+            border: 3px solid #e7be40;
+            padding: 10px;
+            border-radius: 5px; /* Optional: Rounds the logo borders */
+            transition: transform 0.3s;
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Adjust the last icon to align with the right border */
-        .social-media .social-icon:last-child {
-            margin-right: 0px;
+        /* Logos */
+        .logo, .sub-logo, .center-logo {
+            width: 100px;   /* Adjust as needed */
+            height: 100px;  /* Adjust as needed */
+            object-fit: contain;
+            transition: filter 0.3s, transform 0.3s;
+        }
+
+        /* Hover Effects */
+        .logo-container:hover img,
+        .flag:hover,
+        .social-icon:hover {
+            filter: blur(3px);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .logos-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo, .sub-logo, .center-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            .flag, .social-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .footer-text {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="rectangle">
-        <!-- Language Flags -->
-        <div class="flag-container">
-            <img src="images/bulgarian-flag.png" alt="Bulgarian Flag" class="flag">
-            <img src="images/english-flag.png" alt="English Flag" class="flag">
+    <div class="container">
+        <!-- Top Section: Flags and Social Media Icons -->
+        <div class="top-section">
+            <!-- Language Flags -->
+            <div class="flag-container">
+                <img src="images/bulgarian-flag.png" alt="Bulgarian Flag" class="flag">
+                <img src="images/english-flag.png" alt="English Flag" class="flag">
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="#"><img src="images/fb.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="images/yt.png" alt="YouTube" class="social-icon"></a>
+                <a href="#"><img src="images/x.png" alt="X (Twitter)" class="social-icon"></a>
+                <a href="#"><img src="images/ins.png" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="images/li.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
         </div>
 
-        <!-- Social Media Icons -->
-        <div class="social-media">
-            <img src="images/fb.png" alt="Facebook" class="social-icon">
-            <img src="images/yt.png" alt="YouTube" class="social-icon">
-            <img src="images/x.png" alt="X (Twitter)" class="social-icon">
-            <img src="images/ins.png" alt="Instagram" class="social-icon">
-            <img src="images/li.png" alt="LinkedIn" class="social-icon">
+        <!-- Logos Grid -->
+        <div class="logos-grid">
+            <!-- Top-left Logo (Clickable) -->
+            <div class="logo-container">
+                <a href="agrobel2001.html" target="_blank" rel="noopener noreferrer">
+                    <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo logo1">
+                </a>
+            </div>
+
+            <!-- Top-right Logo -->
+            <div class="logo-container">
+                <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo logo2">
+            </div>
+
+            <!-- Bottom-left Logo -->
+            <div class="logo-container">
+                <img src="images/agromel.png" alt="Agromel Logo" class="logo logo3">
+            </div>
+
+            <!-- Bottom-right Logos (Split into Three Sections) -->
+            <div class="logo-container">
+                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo logo4">
+            </div>
+            <div class="logo-container">
+                <img src="images/csr.png" alt="CSR Logo" class="sub-logo logo5">
+            </div>
+            <div class="logo-container">
+                <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo logo6">
+            </div>
+
+            <!-- Center Overlaid Logo -->
+            <div class="logo-container">
+                <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo logo7">
+            </div>
         </div>
 
         <!-- Footer Text -->
         <div class="footer-text">
             © 2024 AGRO-BEL 2001 EOOD Всички права запазени.
         </div>
-
-        <!-- Top-left Logo (Quadrant 1, logo1) -->
-        <div class="logo-container">
-            <a href="agrobel2001.html" target="_blank" rel="noopener noreferrer">
-                <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo logo1">
-            </a>
-        </div>
-
-        <!-- Top-right Logo (Quadrant 2, logo2) -->
-        <div class="logo-container">
-            <img src="images/belbultrans.png" alt="Belbultrans Logo" class="logo logo2">
-        </div>
-
-        <!-- Bottom-left Logo (Quadrant 3, logo3) -->
-        <div class="logo-container">
-            <img src="images/agromel.png" alt="Agromel Logo" class="logo logo3">
-        </div>
-
-        <!-- Bottom-right Quadrant (Quadrant 4) -->
-        <div class="logo-container bottom-right">
-            <!-- First Subquadrant with Agrobel-Hellas Logo (logo4) -->
-            <div class="subquadrant">
-                <img src="images/agrobel-hellas.png" alt="Agrobel-Hellas Logo" class="sub-logo logo4">
-            </div>
-            <!-- Second Subquadrant with CSR Logo (logo5) -->
-            <div class="subquadrant">
-                <img src="images/csr.png" alt="CSR Logo" class="sub-logo logo5">
-            </div>
-            <!-- Third Subquadrant with Agrimachin Logo (logo6) -->
-            <div class="subquadrant">
-                <img src="images/agrimachin.png" alt="Agrimachin Logo" class="sub-logo logo6">
-            </div>
-        </div>
-
-        <!-- Center Overlaid Logo (Agrobel Vegetables, logo7) -->
-        <img src="images/agrobel-vegetables.png" alt="Agrobel Vegetables Logo" class="center-logo logo7">
     </div>
 </body>
 </html>
