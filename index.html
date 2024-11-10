@@ -43,13 +43,13 @@
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 3px; /* Increased width from 2px to 4px for vertical line */
+            width: 3px; /* Increased width for vertical line */
         }
         .rectangle::after {
             top: 50%;
             left: 0;
             right: 0;
-            height: 3px; /* Increased height from 2px to 4px for horizontal line */
+            height: 3px; /* Increased height for horizontal line */
         }
 
         /* Logo Containers */
@@ -80,22 +80,22 @@
             position: relative;
             overflow: hidden;
         }
-        /* Updated the color and thickness of the dividing lines in the bottom-right quadrant */
+        /* Dividing lines in the bottom-right quadrant */
         .bottom-right::before,
         .bottom-right::after {
             content: '';
             position: absolute;
-            background-color: #e7be40; /* Changed color from black to #e7be40 */
+            background-color: #e7be40;
             z-index: 2;
             left: 0;
             right: 0;
-            height: 3px; /* Increased height from 2px to 4px */
+            height: 3px;
         }
         .bottom-right::before {
-            top: calc(33.33%); /* First dividing line */
+            top: calc(33.33%);
         }
         .bottom-right::after {
-            top: calc(66.66%); /* Second dividing line */
+            top: calc(66.66%);
         }
 
         /* Subquadrant Containers */
@@ -114,19 +114,18 @@
         .sub-logo {
             width: 100%; /* Fill the width of the container */
             height: auto;
-            object-fit: contain; /* Maintain aspect ratio */
+            object-fit: contain;
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
         }
 
-        /* Specific Styling for Widened Logos (Fourth and Fifth Logos) */
+        /* Specific Styling for Widened Logos */
         .bottom-right .subquadrant:nth-child(1) .sub-logo,
         .bottom-right .subquadrant:nth-child(2) .sub-logo {
             width: 120%; /* Increase width by 20% */
-            height: auto;
         }
 
-        /* Sixth Logo (Adjusted to fill height) */
+        /* Sixth Logo */
         .bottom-right .subquadrant:nth-child(3) .sub-logo {
             width: auto;
             height: 100%; /* Fill the height of the container */
@@ -191,10 +190,31 @@
             animation: fadeIn 1s forwards;
             animation-delay: 3s;
         }
+
+        /* Language Flags */
+        .flag-container {
+            position: absolute;
+            top: -20px;   /* Adjust this value if needed */
+            left: -20px;  /* Adjust this value if needed */
+            display: flex;
+            z-index: 5;   /* Ensure flags appear above other elements */
+        }
+
+        .flag {
+            width: 24px;
+            height: 16px;
+            margin-right: 5px;  /* Space between the flags */
+        }
     </style>
 </head>
 <body>
     <div class="rectangle">
+        <!-- Language Flags -->
+        <div class="flag-container">
+            <img src="images/bulgarian-flag.png" alt="Bulgarian Flag" class="flag">
+            <img src="images/english-flag.png" alt="English Flag" class="flag">
+        </div>
+
         <!-- Top-left Logo (Quadrant 1, logo1) -->
         <div class="logo-container">
             <img src="images/agrobel-2001.png" alt="Agrobel-2001 Logo" class="logo logo1">
