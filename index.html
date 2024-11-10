@@ -145,10 +145,11 @@
             opacity: 0; /* Start hidden */
         }
 
-        /* Hover Effect for All Logos */
+        /* Hover Effect for All Logos and Flags */
         .logo:hover,
         .sub-logo:hover,
-        .center-logo:hover {
+        .center-logo:hover,
+        .flag:hover {
             filter: blur(3px);
         }
 
@@ -195,15 +196,16 @@
         .flag-container {
             position: absolute;
             top: -20px;   /* Adjust this value if needed */
-            left: -20px;  /* Adjust this value if needed */
+            left: 0px;    /* Aligns the left edge of the Bulgarian flag with the rectangle's left border */
             display: flex;
             z-index: 5;   /* Ensure flags appear above other elements */
         }
 
         .flag {
-            width: 24px;
-            height: 16px;
+            width: 26px;   /* Increased size by 10% */
+            height: 18px;  /* Increased size by 10% */
             margin-right: 5px;  /* Space between the flags */
+            transition: filter 0.3s; /* Added transition for hover effect */
         }
     </style>
 </head>
