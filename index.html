@@ -114,7 +114,7 @@
         .sub-logo {
             width: 100%; /* Fill the width of the container */
             height: auto;
-            object-fit: contain;
+            object-fit: contain; /* Maintain aspect ratio */
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
         }
@@ -195,7 +195,7 @@
         /* Language Flags */
         .flag-container {
             position: absolute;
-            top: -25px;  /* Moved flags up by decreasing the top value */
+            top: -25px;  /* Adjust this value if needed */
             left: 0px;   /* Aligns the left edge of the Bulgarian flag with the rectangle's left border */
             display: flex;
             z-index: 5;  /* Ensure flags appear above other elements */
@@ -207,6 +207,16 @@
             margin-right: 5px;  /* Space between the flags */
             transition: filter 0.3s; /* Added transition for hover effect */
         }
+
+        /* Footer Text */
+        .footer-text {
+            position: absolute;
+            bottom: -20px;   /* Adjust this value if needed */
+            left: 0px;       /* Aligns the left edge with the rectangle's left border */
+            font-size: 12px; /* Small size text */
+            color: white;    /* White color text */
+            z-index: 5;      /* Ensure text appears above other elements */
+        }
     </style>
 </head>
 <body>
@@ -215,6 +225,11 @@
         <div class="flag-container">
             <img src="images/bulgarian-flag.png" alt="Bulgarian Flag" class="flag">
             <img src="images/english-flag.png" alt="English Flag" class="flag">
+        </div>
+
+        <!-- Footer Text -->
+        <div class="footer-text">
+            © 2024 AGRO-BEL 2001 EOOD Всички права запазени.
         </div>
 
         <!-- Top-left Logo (Quadrant 1, logo1) -->
