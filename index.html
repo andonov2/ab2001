@@ -114,7 +114,7 @@
         .sub-logo {
             width: 100%; /* Fill the width of the container */
             height: auto;
-            object-fit: contain; /* Maintain aspect ratio */
+            object-fit: contain;
             transition: filter 0.3s;
             opacity: 0; /* Start hidden */
         }
@@ -145,11 +145,12 @@
             opacity: 0; /* Start hidden */
         }
 
-        /* Hover Effect for All Logos and Flags */
+        /* Hover Effect for All Logos, Flags, and Social Media Icons */
         .logo:hover,
         .sub-logo:hover,
         .center-logo:hover,
-        .flag:hover {
+        .flag:hover,
+        .social-icon:hover {
             filter: blur(3px);
         }
 
@@ -217,6 +218,27 @@
             color: white;    /* White color text */
             z-index: 5;      /* Ensure text appears above other elements */
         }
+
+        /* Social Media Icons */
+        .social-media {
+            position: absolute;
+            top: -25px;    /* Same level as language flags */
+            right: 0px;    /* Aligns the right edge of the last icon with the rectangle's right border */
+            display: flex;
+            z-index: 5;    /* Ensure icons appear above other elements */
+        }
+
+        .social-icon {
+            width: 26px;    /* Same size as flags */
+            height: 26px;   /* Adjusted height to maintain aspect ratio */
+            margin-left: 5px; /* Space between icons */
+            transition: filter 0.3s; /* Added transition for hover effect */
+        }
+
+        /* Adjust the last icon to align with the right border */
+        .social-media .social-icon:last-child {
+            margin-right: 0px;
+        }
     </style>
 </head>
 <body>
@@ -225,6 +247,15 @@
         <div class="flag-container">
             <img src="images/bulgarian-flag.png" alt="Bulgarian Flag" class="flag">
             <img src="images/english-flag.png" alt="English Flag" class="flag">
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <img src="images/fb.png" alt="Facebook" class="social-icon">
+            <img src="images/yt.png" alt="YouTube" class="social-icon">
+            <img src="images/x.png" alt="X (Twitter)" class="social-icon">
+            <img src="images/ins.png" alt="Instagram" class="social-icon">
+            <img src="images/li.png" alt="LinkedIn" class="social-icon">
         </div>
 
         <!-- Footer Text -->
