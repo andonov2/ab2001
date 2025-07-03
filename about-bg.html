@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>АГРО-БЕЛ 2001</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+</head>
+<body class="main-layout inner_page about_page">
+  <!-- loader  -->
+  <div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+  </div>
+  <!-- end loader -->
+  <div class="full_bg">
+    <header class="header-area">
+      <div class="container-fluid">
+        <div class="row d_flex">
+          <div class="col-md-3 col-sm-4">
+            <div class="logo">
+              <a href="index-bg.html"><img src="images/logo.png" alt="АГРО-БЕЛ 2001" class="site-logo"> АГРО-<span>БЕЛ 2001</span></a>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-8">
+            <div class="navbar-area">
+              <nav class="site-navbar">
+                <ul>
+                  <li><a href="index-bg.html">Начало</a></li>
+                  <li><a class="active" href="about-bg.html">За нас</a></li>
+                  <li><a href="service-bg.html">Услуги</a></li>
+                  <li><a href="contact-bg.html">Контакт</a></li>
+                </ul>
+                <!-- Language Switcher -->
+                <select id="lang-switcher" style="margin-left: 20px; padding: 4px 8px; border-radius: 4px;">
+                  <option value="en">English</option>
+                  <option value="bg">Български</option>
+                </select>
+                <script>
+                const langSwitcher = document.getElementById('lang-switcher');
+                const pageMap = {
+                  'index.html': 'index-bg.html',
+                  'about.html': 'about-bg.html',
+                  'service.html': 'service-bg.html',
+                  'contact.html': 'contact.html', // Add contact-bg.html if you have it
+                  'index-bg.html': 'index.html',
+                  'about-bg.html': 'about.html',
+                  'service-bg.html': 'service.html',
+                  'contact-bg.html': 'contact.html' // Add if you have it
+                };
+                const current = window.location.pathname.split('/').pop();
+                if(current.endsWith('-bg.html')) {
+                  langSwitcher.value = 'bg';
+                } else {
+                  langSwitcher.value = 'en';
+                }
+                langSwitcher.addEventListener('change', function() {
+                  let target;
+                  if(this.value === 'bg') {
+                    target = pageMap[current] || 'index-bg.html';
+                  } else {
+                    target = pageMap[current] || 'index.html';
+                  }
+                  window.location.href = target;
+                });
+                </script>
+                <button class="nav-toggler">
+                  <span></span>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header inner -->
+      </div>
+      <!-- end banner -->
+      <!-- about -->
+      <div class="about">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-lg-6 col-md-12">
+                  <div class="titlepage text_align_left">
+                     <span>За нас</span>
+                     <h2>АГРОПРОДУКТИ</h2>
+                     <span>За фирмата</span>
+                     <h2>ЗЕМЕДЕЛСКИ ПАЗАР</h2>
+                     <p>Факт е, че читателят ще бъде разсеян от четимото съдържание на страницата, когато разглежда нейното оформление. Причината да използваме Lorem Ipsum е, че...</p>
+                     <a class="read_more" href="about-bg.html">Научи повече</a>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <div class="row d_flex">
+                   <div class="col-md-7">
+                     <div class="about_img">
+                        <figure><img src="images/about_img.jpg" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                   <div class="col-md-5">
+                     <div class="about_img">
+                        <figure><img src="images/about_img1.jpg" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row d_flex justify-content-center">
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3> Разгледайте</h3>
+                              <ul class="menu_footer">
+                                 <li><a href="index-bg.html">Начало</a></li>
+                                 <li><a href="about-bg.html">За нас</a></li>
+                                 <li><a href="service-bg.html">Услуги</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3>Последни публикации</h3>
+                              <ul class="recent">
+                                 <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+                                 <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+                              </ul>
+                           </div>
+                        </div>
+                         <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3  flot_right text_align_left">
+                              <h3>Контакт</h3>
+                              <ul class="top_infomation">
+                                 <li><i class="fa fa-phone" aria-hidden="true"></i>
+                                    +01 1234567892
+                                 </li>
+                                 <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <a href="Javascript:void(0)">demo@gmail.com</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+             
+            <div class="copyright">
+               <div class="container">
+                  <div class="row d_flex justify-content-center">
+                     <div class="col-md-8">
+                        <p>© 2022 Всички права запазени. Дизайн от <a href="https://html.design/"> Free html Templates</a></p>
+                     </div>
+                     <div class="col-md-4">
+                           <ul class="social_icon ">
+                              <li><a href="Javascript:void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                              <li><a href="Javascript:void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              <li><a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                           </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/bootstrap-datepicker.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html> 
