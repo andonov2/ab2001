@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AGRO-BEL 2001</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <style>
+    body { margin: 0; padding: 0; }
+    header.header-area {
+      position: fixed;
+      top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      height: 85px;
+      transition: background 0.2s;
+    }
+    .slider_main {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      margin-top: 85px; /* push below header */
+      background: #f5f5f5;
+      z-index: 1;
+      overflow: hidden;
+    }
+    main.main-content {
+      position: relative;
+      background: #fff;
+      min-height: 600px;
+      z-index: 2;
+      margin-top: 0;
+    }
+    footer {
+      position: relative;
+      background: #222;
+      color: #fff;
+      padding: 40px 0 20px 0;
+      text-align: center;
+      z-index: 2;
+    }
+    @media (max-width: 991px) {
+      header.header-area { height: 70px; }
+      .slider_main { height: 240px; margin-top: 70px; }
+    }
+    .carousel {
+      position: relative;
+    }
+    .carousel-control-prev, .carousel-control-next {
+      top: 15% !important;
+      transform: none !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  </style>
+</head>
+<body class="main-layout">
+  <noscript><style>.loader_bg{display:none!important;opacity:0!important;visibility:hidden!important;}</style></noscript>
+  <div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+  </div>
+  <header class="header-area">
+    <div class="container-fluid">
+      <div class="row d_flex">
+        <div class="col-md-3 col-sm-4">
+          <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="AGRO-BEL 2001" class="site-logo"></a>
+          </div>
+        </div>
+        <div class="col-md-7 col-sm-8">
+          <div class="navbar-area">
+            <nav class="site-navbar">
+              <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-0">
+          <!-- Language Switcher -->
+          <select id="lang-switcher" style="padding: 4px 8px; border-radius: 4px; margin-top: 20px;">
+            <option value="en">English</option>
+            <option value="bg">Български</option>
+          </select>
+          <button class="nav-toggler">
+            <span></span>
+          </button>
+          <script>
+          const langSwitcher = document.getElementById('lang-switcher');
+          const pageMap = {
+            'index.html': 'index-bg.html',
+            'about.html': 'about-bg.html',
+            'service.html': 'service-bg.html',
+            'index-bg.html': 'index.html',
+            'about-bg.html': 'about.html',
+            'service-bg.html': 'service.html'
+          };
+          const current = window.location.pathname.split('/').pop();
+          if(current.endsWith('-bg.html')) {
+            langSwitcher.value = 'bg';
+          } else {
+            langSwitcher.value = 'en';
+          }
+          langSwitcher.addEventListener('change', function() {
+            let target;
+            if(this.value === 'bg') {
+              target = pageMap[current] || 'index-bg.html';
+            } else {
+              target = pageMap[current] || 'index.html';
+            }
+            window.location.href = target;
+          });
+          </script>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="slider_main">
+    <div id="banner1" class="carousel slide" data-ride="carousel" data-interval="5000">
+      <ol class="carousel-indicators">
+        <li data-target="#banner1" data-slide-to="0" class="active"></li>
+        <li data-target="#banner1" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <picture>
+            <source srcset="images/banner.jpg" >
+            <img srcset="images/banner.jpg" alt="responsive image" class="d-block img-fluid">
+          </picture>
+          <div class="carousel-caption relative"></div>
+        </div>
+        <div class="carousel-item">
+          <picture>
+            <img srcset="images/wheat.jpg" alt="responsive image" class="d-block img-fluid">
+          </picture>
+          <div class="carousel-caption relative"></div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <main class="main-content">
+    <div class="about">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="willom">
+              <h1>AGRO-BEL 2001</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row d_flex">
+          <div class="col-lg-6 col-md-12">
+            <div class="titlepage text_align_left">
+              <span>About Us</span>
+              <p>Founded in 2001, our agricultural company has grown into a leading producer with more than 10,000 hectares of fertile arable land under careful, sustainable management. Thanks to an advanced irrigation network that services over 1,800 hectares, we achieve consistently high yields of our core field crops—corn, wheat, barley, and sunflower—while safeguarding soil health and water resources.</p>
+              <p>Driven by continuous innovation, five years ago we diversified into open-field vegetable production. Today, premium onions and potatoes complement our grains, allowing us to serve a broader market and make fuller use of our agronomic expertise. From precision planting and climate-smart irrigation to responsible stewardship of the land, every stage of our operation reflects our commitment to quality, sustainability, and long-term food security.</p>
+              <a class="read_more" href="about.html">Learn More</a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="row d_flex">
+              <div class="col-md-8">
+                <div class="about_img">
+                  <figure><img src="images/about_img.jpg" alt="#"/></figure>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="about_img">
+                  <figure><img src="images/about_img1.jpg" alt="#"/></figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage text_align_left">
+              <span>What We Do</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="services_box_main">
+              <div class="services_box text_align_left">
+                <figure><img src="images/service1.jpg" alt="#"/></figure>
+                <div class="veget">
+                  <h3>GRAIN<br>PRODUCTION</h3>
+                  <p>We cultivate premium grains using precision-farming and regenerative soil practices to achieve high yields while protecting the land.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="services_box_main">
+              <div class="services_box text_align_left">
+                <figure><img src="images/service2.jpg" alt="#"/></figure>
+                <div class="veget">
+                  <h3>VEGETABLE<br>PRODUCTION</h3>
+                  <p>Our vegetable program relies on open-field cultivation and water-smart irrigation to deliver fresh, flavour-packed produce year-round.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="services_box_main">
+              <div class="services_box text_align_left">
+                <figure><img src="images/service3.jpg" alt="#"/></figure>
+                <div class="veget">
+                  <h3>CORPORATE SOCIAL<br>RESPONSIBILITY</h3>
+                  <p>We embed fair labour, community engagement and rigorous environmental stewardship into every decision, ensuring our growth creates shared value for people and planet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="choose">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage text_align_center">
+              <h2>Why choose us</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="point text_align_center">
+              <h3>10 000<br>HA</h3>
+              <span>arable land</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="point text_align_center">
+              <h3>20 000<br>SQM</h3>
+              <span>cold storage facility</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="point text_align_center">
+              <h3>1 700<br>HA</h3>
+              <span>irrigated land</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="point text_align_center">
+              <h3>30+</h3>
+              <span>Awards <br>Won</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="news">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage text_align_left">
+              <span>Our</span>
+              <h2>Latest News</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="latest">
+              <figure><img src="images/news1.jpg" alt="#"/></figure>
+              <span>15<br>March</span>
+              <div class="nostrud">
+                <h3>Alteration in somer</h3>
+                <p>has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making iteditors </p>
+                <a class="read_more" href="news.html">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="latest box_desho">
+              <figure><img src="images/news2.jpg" alt="#"/></figure>
+              <span>15<br>March</span>
+              <div class="nostrud">
+                <h3>Alteration in somer</h3>
+                <p>has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making iteditors </p>
+                <a class="read_more" href="news.html">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="latest">
+              <figure><img src="images/news3.jpg" alt="#"/></figure>
+              <span>15<br>March</span>
+              <div class="nostrud">
+                <h3>Alteration in somer</h3>
+                <p>has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making iteditors </p>
+                <a class="read_more" href="news.html">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+      <div class="container">
+        <div class="row d_flex justify-content-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="hedingh3 text_align_left">
+              <h3>Explore</h3>
+              <ul class="menu_footer">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="hedingh3 text_align_left">
+              <h3>Recent Posts</h3>
+              <ul class="recent">
+                <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+                <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="hedingh3  flot_right text_align_left">
+              <h3>Contact</h3>
+              <ul class="top_infomation">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>
+                  +359 882732222
+                </li>
+                <li><i class="fa fa-envelope" aria-hidden="true"></i>
+                  <a href="mailto:office@agro-bel2001.com">office@agro-bel2001.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="row d_flex justify-content-center">
+            <div class="col-md-8">
+              <p>© 2022 All Rights Reserved. Design by <a href="https://html.design/"> Free html Templates</a></p>
+            </div>
+            <div class="col-md-4">
+              <ul class="social_icon ">
+                <li><a href="Javascript:void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="Javascript:void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#banner1').carousel({
+      interval: 5000,
+      ride: 'carousel',
+      pause: false
+    });
+  });
+  </script>
+</body>
+</html>

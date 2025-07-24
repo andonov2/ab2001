@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <title>АГРО-БЕЛ 2001</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+</head>
+<body class="main-layout inner_page about_page">
+  <!-- loader  -->
+  <div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+  </div>
+  <!-- end loader -->
+  <div class="full_bg">
+    <header class="header-area">
+      <div class="container-fluid">
+        <div class="row d_flex">
+          <div class="col-md-3 col-sm-4">
+            <div class="logo">
+              <a href="index-bg.html"><img src="images/logo.png" alt="АГРО-БЕЛ 2001" class="site-logo"></a>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-8">
+            <div class="navbar-area">
+              <nav class="site-navbar">
+                <ul>
+                  <li><a href="index-bg.html">Начало</a></li>
+                  <li><a class="active" href="about-bg.html">За нас</a></li>
+                  <li><a href="service-bg.html">Услуги</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-0">
+            <!-- Language Switcher -->
+            <select id="lang-switcher" style="padding: 4px 8px; border-radius: 4px; margin-top: 20px;">
+              <option value="en">English</option>
+              <option value="bg">Български</option>
+            </select>
+            <button class="nav-toggler">
+              <span></span>
+            </button>
+                <script>
+                const langSwitcher = document.getElementById('lang-switcher');
+                const pageMap = {
+                  'index.html': 'index-bg.html',
+                  'about.html': 'about-bg.html',
+                  'service.html': 'service-bg.html',
+                  'index-bg.html': 'index.html',
+                  'about-bg.html': 'about.html',
+                  'service-bg.html': 'service.html'
+                };
+                const current = window.location.pathname.split('/').pop();
+                if(current.endsWith('-bg.html')) {
+                  langSwitcher.value = 'bg';
+                } else {
+                  langSwitcher.value = 'en';
+                }
+                langSwitcher.addEventListener('change', function() {
+                  let target;
+                  if(this.value === 'bg') {
+                    target = pageMap[current] || 'index-bg.html';
+                  } else {
+                    target = pageMap[current] || 'index.html';
+                  }
+                  window.location.href = target;
+                });
+                </script>
+
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header inner -->
+      </div>
+      <!-- end banner -->
+      <!-- about -->
+      <div class="about">
+         <div class="container-fluid">
+            <div class="row d_flex">
+               <div class="col-lg-6 col-md-12">
+                  <div class="titlepage text_align_left">
+                     <span>За нас</span>
+                     <p>Основана през 2001 г., нашата земеделска компания се превърна във водещ производител с над 10 000 хектара плодородна обработваема земя под внимателно, устойчиво управление. Благодарение на напреднала напоителна мрежа, която обслужва над 1 800 хектара, постигаме постоянно високи добиви от основните си полски култури – царевица, пшеница, ечемик и слънчоглед – като същевременно опазваме почвеното здраве и водните ресурси.</p>
+                     <p>Водени от непрекъснати иновации, преди пет години диверсифицирахме дейността си с открито производство на зеленчуци. Днес премиум лук и картофи допълват нашите зърнени култури, което ни позволява да обслужваме по-широк пазар и да използваме пълноценно агрономичния си опит. От прецизно засяване и интелигентно напояване до отговорно управление на земята, всеки етап от нашата дейност отразява ангажимента ни към качество, устойчивост и дългосрочна продоволствена сигурност.</p>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <div class="row d_flex">
+                   <div class="col-md-7">
+                     <div class="about_img">
+                        <figure><img src="images/about_img.jpg" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                   <div class="col-md-5">
+                     <div class="about_img">
+                        <figure><img src="images/about_img1.jpg" alt="#"/>
+                        </figure>
+                     </div>
+                   </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end about -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row d_flex justify-content-center">
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3> Разгледайте</h3>
+                              <ul class="menu_footer">
+                                 <li><a href="index-bg.html">Начало</a></li>
+                                 <li><a href="about-bg.html">За нас</a></li>
+                                 <li><a href="service-bg.html">Услуги</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3 text_align_left">
+                              <h3>Последни публикации</h3>
+                              <ul class="recent">
+                                 <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+                                 <li><img src="images/resent.jpg" alt="#"/>ea commodo consequat. Duis aute </li>
+                              </ul>
+                           </div>
+                        </div>
+                         <div class="col-lg-3 col-md-6">
+                           <div class="hedingh3  flot_right text_align_left">
+                              <h3>Контакт</h3>
+                              <ul class="top_infomation">
+                                 <li><i class="fa fa-phone" aria-hidden="true"></i> +359 882732222</li>
+                                 <li><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:office@agro-bel2001.com">office@agro-bel2001.com</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+             
+            <div class="copyright">
+               <div class="container">
+                  <div class="row d_flex justify-content-center">
+                     <div class="col-md-8">
+                        <p>© 2022 Всички права запазени. Дизайн от <a href="https://html.design/"> Free html Templates</a></p>
+                     </div>
+                     <div class="col-md-4">
+                           <ul class="social_icon ">
+                              <li><a href="Javascript:void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                              <li><a href="Javascript:void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              <li><a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                           </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/bootstrap-datepicker.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html> 
