@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Logos Homepage</title>
+    <style>
+        body {
+            background: #fff url('Logos/background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+            position: relative;
+            width: 875px;
+            height: 482px;
+            transform: translate(-5%, -5%);
+            border: 4px solid orange;
+            box-sizing: border-box;
+        }
+        .logo-grid::before,
+        .logo-grid::after {
+            display: none;
+        }
+        .separator-vertical {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: orange;
+            transform: translateX(-2px);
+            z-index: 2;
+        }
+        .separator-horizontal {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: orange;
+            transform: translateY(-2px);
+            z-index: 2;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: none;
+        }
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .logo.logo-stack {
+            flex-direction: column;
+            gap: 0;
+        }
+        .logo.logo-stack img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+        /* Placeholder for center logo */
+        .center-logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-grid">
+        <!-- Vertical and horizontal separation lines -->
+        <div class="separator-vertical"></div>
+        <div class="separator-horizontal"></div>
+        <div class="logo" style="grid-column: 1; grid-row: 1;">
+            <img src="Logos/agrobelbg.png" alt="Agrobel Logo">
+        </div>
+        <div class="logo" style="grid-column: 2; grid-row: 1; align-items: center; justify-content: center; display: flex; width: 100%; height: 100%;">
+            <img src="Logos/belbultrans.png" alt="Belbultrans Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        </div>
+        <div class="logo" style="grid-column: 1; grid-row: 2;">
+            <img src="Logos/agromel.png" alt="Agromel Logo">
+        </div>
+        <div class="logo logo-stack" style="grid-column: 2; grid-row: 2;">
+            <img src="Logos/agrobelhellas.png" alt="Agrobel Hellas Logo">
+            <img src="Logos/AGROBEL CSR.png" alt="Agrobel CSR Logo">
+            <div style="width: 100%; height: 71px; overflow: hidden; display: flex; align-items: flex-start;">
+                <img src="Logos/agrimachin.png" alt="Agrimachin Logo" style="max-width: 100%; max-height: 80px; object-fit: contain; margin-bottom: -20%;">
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
