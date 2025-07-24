@@ -60,19 +60,20 @@
             height: 100%;
             background: none;
         }
+        /* each grid cell is roughly 431px × 235px, so scale logos to 90% */
         .logo img {
-            max-width: 80%;
-            max-height: 80%;
+            max-width: 90%;
+            max-height: 90%;
             object-fit: contain;
         }
         .logo.logo-stack {
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-evenly;
             gap: 0;
         }
         .logo.logo-stack img {
-            max-width: 30%;
-            max-height: 100%;
+            max-width: 80%;
+            max-height: 30%;
             object-fit: contain;
         }
         /* Placeholder for center logo */
