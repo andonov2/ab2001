@@ -61,17 +61,18 @@
             background: none;
         }
         .logo img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 80%;
+            max-height: 80%;
             object-fit: contain;
         }
         .logo.logo-stack {
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-evenly;
             gap: 0;
         }
         .logo.logo-stack img {
-            max-width: 100%;
-            max-height: 80px;
+            max-width: 30%;
+            max-height: 100%;
             object-fit: contain;
         }
         /* Placeholder for center logo */
@@ -94,18 +95,16 @@
                 <img src="Logos/agrobelbg.png" alt="Agrobel Logo" style="cursor:pointer;">
             </a>
         </div>
-        <div class="logo" style="grid-column: 2; grid-row: 1; align-items: center; justify-content: center; display: flex; width: 100%; height: 100%;">
-            <img src="Logos/belbultrans.png" alt="Belbultrans Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+        <div class="logo" style="grid-column: 2; grid-row: 1;">
+            <img src="Logos/belbultrans.png" alt="Belbultrans Logo">
         </div>
         <div class="logo" style="grid-column: 1; grid-row: 2;">
             <img src="Logos/agromel.png" alt="Agromel Logo">
         </div>
         <div class="logo logo-stack" style="grid-column: 2; grid-row: 2;">
             <img src="Logos/agrobelhellas.png" alt="Agrobel Hellas Logo">
-            <img src="Logos/AGROBEL CSR.png" alt="Agrobel CSR Logo">
-            <div style="width: 100%; height: 71px; overflow: hidden; display: flex; align-items: flex-start;">
-                <img src="Logos/agrimachin.png" alt="Agrimachin Logo" style="max-width: 100%; max-height: 80px; object-fit: contain; margin-bottom: -20%;">
-            </div>
+            <img src="Logos/AGROBEL_CSR.png" alt="Agrobel CSR Logo">
+            <img src="Logos/agrimachin.png" alt="Agrimachin Logo">
         </div>
     </div>
 </body>
